@@ -11,9 +11,9 @@ Be able to delete account(vidhyut)
 
 Memorizing: 
 
-input a markdown file and ouput flash cards.
+input a markdown file and ouput flash cards. (Brandon)
 
-Share flash cards (add to their account)
+Share flash cards (add to their account) (Brandon)
 
 Notes:
 
@@ -31,7 +31,7 @@ Use pomodoro timer.
 
 Chat:
 
-Ability to create a chat room for your class.
+Ability to create a chat room for your class. 
 
 Ability to invite other students to your chat room.
 
