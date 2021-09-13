@@ -1,3 +1,44 @@
+General Feature
+
+Ability for users to sign-up, login/logout.
+
+Be able to delete account
+
+Memorizing: 
+
+input a markdown file and ouput flash cards.
+
+Share flash cards (add to their account)
+
+Notes:
+
+render markdown notes
+
+convert markdown notes to pdf
+
+share notes with other people (add to their account)
+
+Time Management:
+
+Create time blocks (using markdown)
+
+Use pomodoro timer.
+
+Chat:
+
+Ability to create a chat room for your class.
+
+Ability to invite other students to your chat room.
+
+Problem Assist:
+
+Ability to upload problems or questions from class with answers.
+
+Other users can access and read class problems and answers.
+
+
+####################
+
 ### Team 2 Project
 
 Date: 
