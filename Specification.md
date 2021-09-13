@@ -35,7 +35,7 @@ Users log themselves in.
 
 Step 1: User enters their username and password.
 Step 2: User queries the server with their information.
-Step 3: User's credentials are checked for validity (encryption?).
+Step 3: User's credentials are checked for validity by server (encryption?).
 Step 4: User logs into their main page.
 
 ## Primary Postconditions
@@ -45,7 +45,10 @@ Step 4: User logs into their main page.
 ## Alternate Sequences
 
 User does not have an account:
-	Step 1: Display a warning that the username was not found.
+	Step 1: Display a warning that the username was not found, display a link to account creation page.
+	Step 2: User creates an account with a username and password.
+	Step 3: User gets redirected to login page.
+	Step 4: User logs in with newly created account.
 
 User entered their password incorrectly:
 	Step 1: Display a warning that the password was incorrect.
@@ -55,4 +58,4 @@ User entered their password incorrectly:
 Computer logs user in automatically (remember me feature)?
 
 ### Alternate Postconditions
-	Error warnings.
+	None.
