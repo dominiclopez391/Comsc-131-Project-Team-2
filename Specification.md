@@ -1,3 +1,4 @@
+
 Vidhyut
 
 
@@ -6,7 +7,7 @@ General Feature
 
 Ability for users to sign-up, login/logout.
 
-Be able to delete account
+Be able to delete account(vidhyut)
 
 Memorizing: 
 
@@ -20,7 +21,7 @@ render markdown notes
 
 convert markdown notes to pdf
 
-share notes with other people (add to their account)
+share notes with other people (add to their account)(vidhyut)
 
 Time Management:
 
@@ -36,9 +37,9 @@ Ability to invite other students to your chat room.
 
 Problem Assist:
 
-Ability to upload problems or questions from class with answers.
+Ability to upload problems or questions from class with answers.(vidhyut)
 
-Other users can access and read class problems and answers.
+Other users can access and read class problems and answers.(vidhyut)
 
 
 ####################
