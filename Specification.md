@@ -25,15 +25,15 @@ share notes with other people (add to their account)(vidhyut)
 
 Time Management:
 
-Create time blocks (using markdown)
+(Dominic) Create time blocks (using markdown)
 
-Use pomodoro timer.
+(Dominic) Use pomodoro timer.
 
 Chat:
 
-Ability to create a chat room for your class. 
+(Dominic) Ability to create a chat room for your class. 
 
-Ability to invite other students to your chat room.
+(Dominic) Ability to invite other students to your chat room.
 
 Problem Assist:
 
