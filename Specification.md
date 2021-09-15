@@ -17,9 +17,9 @@ Share flash cards (add to their account) (Brandon)
 
 Notes:
 
-render markdown notes
+render markdown notes(Pranav)
 
-convert markdown notes to pdf
+convert markdown notes to pdf(Pranav)
 
 share notes with other people (add to their account)(vidhyut)
 
