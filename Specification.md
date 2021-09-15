@@ -48,7 +48,7 @@ Other users can access and read class problems and answers.(vidhyut)
 
 Date: 
 
-Product Name: 
+Product Name: StudyAid 
 
 Problem Statement: As a student, it can be difficult to schedule and manage regular study sessions. This app helps to remedy that by
 giving students a way to organize their notes, a way to create flash cards and practice memorization, time blocks to help organize
@@ -105,3 +105,130 @@ Computer logs user in automatically (remember me feature)?
 
 ### Alternate Postconditions
 	None.
+
+####################
+
+# Use Case Description
+
+Use Case Name: Input a markdown file and output flash cards
+
+## Summary
+
+This feature will allow users to put their input into a markdown file and have it converted into an easy to read flash card.
+ 
+
+## Actors
+
+actor 1: User
+
+actor 2: Server
+ 
+
+## Preconditions
+
+* User is logged into their account
+ 
+
+## Triggers
+
+User selects create a flash card.
+
+
+## Primary Sequence
+
+User selects create a flash card.
+
+User puts their input into markdown file.
+
+Markdown file is converted into easy to read flash card.
+
+Flash card is saved to user's account.
+
+User is prompted to create another flashcard or to quit.
+
+
+## Primary Postconditions
+
+* User enters the main page of their account.
+
+ 
+
+## Alternate Sequences
+
+User exceeds word count:
+	1) Prompt user that their input exceeds the word count.
+	2) (User shortens their input to appropriate size)
+	3) Convert markdown file to flash card.
+	4) Save flash card to account.
+
+
+### Alternate Trigger
+None.
+
+### Alternate Postconditions
+None.
+
+####################
+
+# Use Case Description
+
+Use Case Name: Share flash cards (add to their account)
+
+## Summary
+
+A sharing system between different users for flash cards.
+ 
+
+## Actors
+
+actor 1: Server
+
+actor 2: User 1 (Sharing)
+
+actor 3: User 2 (Receiving)
+ 
+
+## Preconditions
+
+User is logged into account.
+
+User 1 and 2 has sharing enabled (Privacy setting/visibility setting set to public on default?)
+
+ 
+## Triggers
+
+User selects share notes feature.
+ 
+
+## Primary Sequence
+
+User 1 selects share notes feature.
+
+User 1 is prompted with a search feature for other users. (Email/username/friend system)
+
+System checks user 2's privacy/visibility settings and is set to public.
+
+Notes are shared to user 2. (Via a "shared notes" folder)
+
+User 2 is prompted that notes have been shared from user 1.
+ 
+
+## Primary Postconditions
+
+* User enters the main page of their account.
+
+
+## Alternate Sequences
+
+System checks user 2's privacy/visibility settings and they are set to private:
+	1) User 2 will not appear in search user feature.
+	2) User 1 will be prompted that user 2 could not be found.
+	3) User 2 will have to find a public account or quit.
+
+ 
+### Alternate Trigger
+Shared notes (Where multiple people can edit)
+
+### Alternate Postconditions
+None.
+
