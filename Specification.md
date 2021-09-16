@@ -338,3 +338,110 @@ If pomodoro timer cancelled early, prompt the user for another pomodoro timer.
 ### Alternate Postconditions
 
 None.
+
+#########################
+
+# Use Case Description
+Use Case Name: Create a chatroom
+## Summary
+
+Users can create a chatroom specifically for their class which they can invite people to.
+## Actors
+
+actor 1: User
+Actor 2: Server
+Actor 3: Other users
+ 
+## Preconditions
+
+* User already has an account created.
+ 
+## Triggers
+
+User clicks on the "chatroom" button on the main page.
+
+## Primary Sequence
+
+Step 1: User clicks on the "chatroom" button.
+
+Step 2: User clicks on "create a chatroom" in chatroom page.
+
+Step 3: User is prompted for the room name and class number.
+
+Step 4: Server checks if a chat room for that class was already created. If not, a chat room is created.
+
+Step 5: User is sent to chat room.
+
+Step 6: User is given a link which can be shared to other people to join the chat room.
+
+## Primary Postconditions
+
+* Chat room is created.
+
+* shareable link to chat room is created.
+
+## Alternate Sequences
+
+Chat room is already created: display error and link to the already created chat room.
+
+### Alternate Trigger
+
+None.
+
+### Alternate Postconditions
+
+None.
+
+###################
+
+# Use Case Description
+Use Case Name: Talk In Chatroom
+## Summary
+
+Users can join created chat rooms, where they have the ability to send and read messages to their peers.
+
+## Actors
+
+actor 1: User
+Actor 2: Server
+Actor 3: Other users
+ 
+## Preconditions
+
+* User already has an account created. Chat room has been created by the server.
+ 
+## Triggers
+
+User clicks on the "chatroom" button on the main page.
+
+## Primary Sequence
+
+Step 1: User clicks on the "chatroom" button.
+
+Step 2: User sees a list of chat rooms they are a part of. The name of the room and class number are displayed for each room.
+
+Step 3: User clicks to join the chat room.
+
+Step 4: User sees previously made comments.
+
+Step 5: User sees message prompt, types in a comment and submits it.
+
+Step 6: Server saves comment in database of comments for that chatroom, and displays it in the chatroom.
+
+Step 7: Other users can see the message left by the user.
+
+## Primary Postconditions
+
+* User can chat with other users.
+
+## Alternate Sequences
+
+None.
+
+### Alternate Trigger
+
+User goes to the link for the chat room.
+
+### Alternate Postconditions
+
+None.
