@@ -25,9 +25,9 @@ share notes with other people (add to their account)(vidhyut)
 
 Time Management:
 
-(Dominic) Create time blocks (using markdown)
+(done) (Dominic) Create time blocks (using markdown)
 
-(Dominic) Use pomodoro timer.
+(done) (Dominic) Use pomodoro timer.
 
 Chat:
 
@@ -105,6 +105,7 @@ Computer logs user in automatically (remember me feature)?
 
 ### Alternate Postconditions
 	None.
+
 
 ####################
 
@@ -232,3 +233,108 @@ Shared notes (Where multiple people can edit)
 ### Alternate Postconditions
 None.
 
+################
+
+# Use Case Description
+Use Case Name: Time Blocks
+## Summary
+
+Ability for users to create and view a weekly time block schedule. 
+
+## Actors
+
+actor 1: User
+Actor 2: Server
+ 
+## Preconditions
+
+* User already has an account created.
+ 
+## Triggers
+
+User clicks on the "time block" button on the main page.
+
+## Primary Sequence
+
+Step 1: User clicks on the time blocks button.
+
+Step 2: If the server has a time block on file for the user, it sends it to their client.
+
+Step 3: User can view their weekly time block.
+
+
+## Primary Postconditions
+
+* User can view their time block.
+
+## Alternate Sequences
+
+User does not have a weekly time block:
+
+Step 1: Prompt the user for a time block in a .md file, formatted so that the system can read the file.
+
+Step 2: Store the time block .md on the server.
+
+Step 3: Display the user's newly created time block.
+
+User's time block is formatted incorrectly:
+
+Display an error that the time block was not formatted correctly.
+
+### Alternate Trigger
+
+None.
+
+### Alternate Postconditions
+
+Display error message "time block not found." User continues to not have time block.
+
+
+#################
+
+# Use Case Description
+Use Case Name: Pomodoro Timer
+## Summary
+
+Ability for users to utilize a pomodoro timer to help them manage study time based on certain intervals.
+
+## Actors
+
+actor 1: User
+Actor 2: Server
+ 
+## Preconditions
+
+* User already has an account created.
+ 
+## Triggers
+
+User clicks on the "pomodoro timer" button on the main page.
+
+## Primary Sequence
+
+Step 1: User clicks on the "pomodoro timer" button.
+
+Step 2: Server prompts the user for a set amount of time they would like to study for.
+
+Step 3: User enters a time in hours and minutes.
+
+Step 4: Server divides the amount of time into sets of 25 minutes of studying and 5 minutes of break. User can view the amount of time they have left for each stage.
+
+Step 5: Once timer ends, website prompts user for another time.
+
+## Primary Postconditions
+
+* User can view the duration of their pomodoro timer.
+
+## Alternate Sequences
+
+User cancels their pomodoro timer early.
+
+### Alternate Trigger
+
+If pomodoro timer cancelled early, prompt the user for another pomodoro timer.
+
+### Alternate Postconditions
+
+None.
