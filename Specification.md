@@ -451,3 +451,53 @@ User goes to the link for the chat room.
 ### Alternate Postconditions
 
 None.
+
+###################
+
+# Use Case Description
+Rendor Markdown Notes
+## Summary
+
+This will allow user to create notes with basic features like Heading, Subheading, Bold, etc.
+
+## Actors
+
+actor 1: User
+Actor 2: Server
+ 
+## Preconditions
+
+The user is already looged into their account.
+ 
+## Triggers
+
+User selects "Create a Note" option on the main page.
+
+## Primary Sequence
+
+Step 1: User selects "Create a Note" option.
+
+Step 2: User enters the content to the note according to his own needs.
+
+Step 3: User saves the note to their account with a name of their choice. 
+
+Step 4: User is asked before quitting if he wants to make another note or not.
+
+## Primary Postconditions
+
+User enters in a window with all the other notes taken/shared by them.
+
+## Alternate Sequences
+
+User exceeds word limit:
+Step 1: Prompts the user that they are on the second page.
+
+Step 2: User saves it as one markdown file.
+
+### Alternate Trigger
+
+None.
+
+### Alternate Postconditions
+
+None.
