@@ -54,7 +54,13 @@ Problem Statement: As a student, it can be difficult to schedule and manage regu
 giving students a way to organize their notes, a way to create flash cards and practice memorization, time blocks to help organize
 their weekly schedule, and create study-sessions with other students in their class.
 
-Non-functional Requirements: The app must be easy and pleasing to use, and overall give the user a satisfying experience.
+Non-functional Requirements: 
+
+The app must be easy and pleasing to use, and overall give the user a satisfying experience.
+
+The app must be usable in a browser like Firefox or Chrome.
+
+The app must be easily navigable using a mouse and keyboard.
 
 ####################
 
