@@ -3,17 +3,21 @@ Vidhyut
 
 
 
-General Feature
+General Feature:
 
 Ability for users to sign-up, login/logout.
 
 Be able to delete account(vidhyut)
+
+Public/private setting (Brandon)
 
 Memorizing: 
 
 input a markdown file and ouput flash cards. (Brandon)
 
 Share flash cards (add to their account) (Brandon)
+
+Categorize flashcards (Brandon)
 
 Notes:
 
@@ -106,6 +110,64 @@ Computer logs user in automatically (remember me feature)?
 ### Alternate Postconditions
 	None.
 
+##################
+
+Use Case Name: Public/private setting
+
+## Summary
+
+This feature will allow the user to toggle between a public or private setting on their account. While
+public, the user's account will be able to be searched. While private the user's account will not be able
+to be searched. Account's will be set to default on creation.
+
+
+## Actors
+
+actor 1: Server
+
+actor 2: User
+ 
+
+## Preconditions
+
+* First time user
+ 
+
+## Triggers
+
+Account creation.
+
+
+## Primary Sequence
+
+User creates an account an account and inputs their credentials.
+
+Will be prompted to toggle their privacy setting.
+ 
+
+## Primary Postconditions
+
+* User enters the main page of their account.
+ 
+
+## Alternate Sequences
+
+User has already created an account and wants to toggle their privacy:
+
+Enter user's main page.
+
+Select options.
+
+Select privacy and toggle accordingly.
+
+
+### Alternate Trigger
+
+User enters privacy settings.
+
+### Alternate Postconditions
+
+User enters the main page of their account.
 
 ####################
 
@@ -128,6 +190,7 @@ actor 2: Server
 ## Preconditions
 
 * User is logged into their account
+* User is on the main page
  
 
 ## Triggers
@@ -152,7 +215,6 @@ User is prompted to create another flashcard or to quit.
 
 * User enters the main page of their account.
 
- 
 
 ## Alternate Sequences
 
@@ -191,9 +253,11 @@ actor 3: User 2 (Receiving)
 
 ## Preconditions
 
-User is logged into account.
+User 1 is logged into account.
 
-User 1 and 2 has sharing enabled (Privacy setting/visibility setting set to public on default?)
+User 1 is viewing flash cards.
+
+User 1 and 2 have sharing enabled (Privacy setting/visibility setting set to public on default?)
 
  
 ## Triggers
@@ -228,10 +292,72 @@ System checks user 2's privacy/visibility settings and they are set to private:
 
  
 ### Alternate Trigger
-Shared notes (Where multiple people can edit)
+Shared notes (Where multiple people can edit?)
 
 ### Alternate Postconditions
 None.
+
+
+##################
+
+Use Case Name: Categorize flashcards
+
+## Summary
+
+This feature will allow the user to section their flashcards into different categories.
+ 
+
+## Actors
+
+actor 1: Server
+
+actor 2: User
+ 
+
+## Preconditions
+
+* User is logged in.
+
+* User is on their main page.
+
+
+## Triggers
+
+User selects categorize flash cards button.
+
+ 
+## Primary Sequence
+
+User selects categorize flash cards button.
+
+User is prompted to create category or to add to an existing one.
+ 
+Flash card is saved to that category.
+
+
+## Primary Postconditions
+
+* User enters the main page of their account.
+ 
+
+## Alternate Sequences
+
+User tries to create an existing category:
+
+User is prompted that such category already exist.
+
+User is prompted to add to that existing category or input a different category.
+
+ 
+
+### Alternate Trigger
+
+User tries to create an existing category.
+
+
+### Alternate Postconditions
+
+User enters the main page of their account.
 
 ################
 
