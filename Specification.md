@@ -590,7 +590,8 @@ This will allow user to create notes with basic features like Heading, Subheadin
 
 ## Actors
 
-actor 1: User
+Actor 1: User
+
 Actor 2: Server
  
 ## Preconditions
@@ -618,9 +619,56 @@ User enters in a window with all the other notes taken/shared by them.
 ## Alternate Sequences
 
 User exceeds word limit:
+
 Step 1: Prompts the user that they are on the second page.
 
 Step 2: User saves it as one markdown file.
+
+### Alternate Trigger
+
+None.
+
+### Alternate Postconditions
+
+None.
+
+###################
+
+# Use Case Description
+Convert markdown into pdf files
+## Summary
+
+This option converts the markdown file into a PDF file and gives the user poptions to email it to themselves.
+
+## Actors
+
+Actor 1: User
+
+Actor 2: Server
+ 
+## Preconditions
+
+The user is already looged into their account and the note already exists in their account.
+ 
+## Triggers
+
+The user selects "View Notes" option.
+
+## Primary Sequence
+
+Step 1: The user selects "View Notes" option.
+
+Step 2: The user clicks on "Print"/"Email the PDF"/"Share as PDF" option.
+
+Step 3: The download of the PDF starts/message is displayed "Email sent". 
+
+## Primary Postconditions
+
+User is prompted with with a copy of the PDF.
+
+## Alternate Sequences
+
+None.
 
 ### Alternate Trigger
 
