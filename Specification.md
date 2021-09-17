@@ -306,6 +306,8 @@ None.
 
 ##################
 
+# Use Case Description
+
 Use Case Name: Categorize flashcards
 
 ## Summary
