@@ -741,3 +741,87 @@ Account is either suspended or nothing has changed.
 
 ##################
 
+# Use Case Description
+
+Use Case Name: Share Class Notes
+
+## Summary
+
+A sharing system between different users for a particular class.
+ 
+
+## Actors
+
+actor 1: User 1 (Sharing) 
+
+actor 2: Server (Receiving)
+
+actor 3: User 2 (Receiving)
+ 
+
+## Preconditions
+
+User 1 is logged into account.
+
+User 1 has created notes and is viewing the notes
+
+User 1 and 2 have sharing enabled (Privacy setting/Visibility setting set appropriately)
+
+ 
+## Triggers
+
+User selects share notes feature.
+ 
+## Primary Sequence
+
+Step 1: User 1 selects share notes feature.
+
+Step 2: User 1 is prompted with a search feature for other users (Email/username/friend system).
+
+Step 3: System checks user 2's privacy/visibility settings and is set to public.
+
+Step 4: Notes are shared to user 2. (Via a "shared notes" folder)
+
+Step 5: User 2 is prompted that notes have been shared from user 1.
+ 
+
+## Primary Postconditions
+
+User enters the notes page of their account and able to view who has access to the notes.
+
+
+## Alternate Sequences
+
+*System checks user 2's privacy/visibility settings and they are set to private:
+
+Step 1: User 2 will not appear in search user feature.
+Step 2: User 1 will be prompted that user 2 could not be found.
+Step 3: User 2 will have to make changes to the appropriate setting or will not be able to receive.
+
+*User wants to share notes to the class page:
+
+Step 1: User 1 selects share notes option
+Step 2: User selects option to share to class page instead of single/multiple selected users
+Step 3: Server checks if Class page can receive files
+Step 4: Notes are shared to class page
+
+*User no longer wants to share a note with others
+
+Step 1: User 1 changes privacy setting to private
+
+
+ 
+### Alternate Trigger
+
+For Sequence 1: User 1 selects User 2 to share notes with
+
+For Sequence 2: User 1 selects option to share to class page
+
+For Sequence 3: User changes privacy setting
+
+### Alternate Postconditions
+
+User is directed to view the notes they have on the account and their statuses.
+
+##################
+
