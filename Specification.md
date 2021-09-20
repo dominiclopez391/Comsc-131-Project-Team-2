@@ -677,3 +677,67 @@ None.
 ### Alternate Postconditions
 
 None.
+
+## Use Case Description
+
+Use Case Name: Delete account
+
+## Summary
+
+An option for the user to terminate their account. 
+
+## Actors
+
+Actor 1: User
+Actor 2: Server
+ 
+## Preconditions
+
+User already has an account created.
+ 
+## Triggers
+
+Users select “delete account” option
+
+## Primary Sequence
+
+Step 1: User opens “Account Settings”.
+
+Step 2: User selects “Delete Account” setting.
+
+Step 3: User accepts first delete message warning with delete option instead of option to suspend the account.
+
+Step 4: User accepts “final deletion” warning.
+
+## Primary Postconditions
+
+User is redirected to main page of website
+
+## Alternate Sequences
+
+*User wants to suspend account temporarily:
+
+Step 1: Display a warning that the account can be suspended instead of deletion in first          
+delete message warning
+
+Step 2: User selects suspend account option
+
+Step 3: User selects suspend time period or indefinitely suspended option
+
+Step 4: User is logged out and redirected to home page of website
+
+*User does not want to delete account:
+
+Step 1: User selects option “No” in first delete warning
+Step 2: User selects option to suspend in first delete warning
+Step 3: User selects option “No” in final delete warning
+
+## Alternate Trigger
+
+User selects delete account option in account settings
+
+## Alternate Postconditions
+Account is either suspended or nothing has changed.
+
+##################
+
