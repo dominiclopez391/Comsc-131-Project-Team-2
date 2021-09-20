@@ -825,3 +825,61 @@ User is directed to view the notes they have on the account and their statuses.
 
 ##################
 
+# Use Case Description
+
+Use Case Name: Create a Class page
+
+## Summary
+
+Users can create a Class page specifically for their class which they can invite people to. Class page is where they upload files related to their class 
+
+## Actors
+
+Actor 1: User
+Actor 2: Server
+Actor 3: Other users
+ 
+## Preconditions
+
+User already has an account created.
+User is in “Classes” page
+ 
+## Triggers
+
+User clicks on the "Classes" button on the main page.
+
+## Primary Sequence
+
+Step 1: User clicks on "create a Class" in Classes page.
+
+Step 3: User is prompted for the room name and class number.
+
+Step 4: Server checks if a class page for that class was already created and gives user option to join the class page or continue with creation.
+
+Step 5: User is sent to newly created Class page.
+
+Step 6: User is given a link which can be shared to other people to join the Class page based on selected visibility settings
+
+## Primary Postconditions
+
+Class page is created.
+
+Shareable link to Class page is created.
+
+## Alternate Sequences
+
+*Class page is already created: 
+
+Display similar class pages and number of users in each class page and links to the already created class pages.
+
+### Alternate Trigger
+
+User enters already created class information.
+
+### Alternate Postconditions:
+
+User is added to created class page.
+
+###################
+
+
