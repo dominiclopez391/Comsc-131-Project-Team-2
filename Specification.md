@@ -1,9 +1,4 @@
-
-Vidhyut
-
-
-
-General Feature:
+General Features:
 
 Ability for users to sign-up, login/logout.
 
