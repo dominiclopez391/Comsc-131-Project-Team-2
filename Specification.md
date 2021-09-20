@@ -2,7 +2,7 @@ General Features:
 
 Ability for users to sign-up, login/logout.
 
-Be able to delete account(vidhyut)
+(done) Be able to delete account(vidhyut)
 
 Public/private setting (Brandon)
 
@@ -20,7 +20,7 @@ render markdown notes(Pranav)
 
 convert markdown notes to pdf(Pranav)
 
-share notes with other people (add to their account)(vidhyut)
+(done) share notes with other people (add to their account)(vidhyut)
 
 Time Management:
 
@@ -36,9 +36,9 @@ Chat:
 
 Problem Assist:
 
-Ability to upload problems or questions from class with answers.(vidhyut)
+(done) Ability to upload problems or questions from class with answers.(vidhyut) (made it a create class page use)
 
-Other users can access and read class problems and answers.(vidhyut)
+(done) Other users can access and read class problems and answers.(vidhyut) (made it a create tab for class page)
 
 
 ####################
@@ -877,4 +877,58 @@ User is added to created class page.
 
 ###################
 
+# Use Case Description
+
+Use Case Name: Tabs in Class Page
+
+## Summary
+
+Users can create a separate tab (Frequently asked questions etc.) in their created class page
+
+## Actors
+
+Actor 1: User
+Actor 2: Server
+
+ 
+## Preconditions
+
+*User already has an account created.
+*User already created a class page
+*User is in “Classes” page
+ 
+## Triggers
+
+User clicks on the "Create tab" button on the main class page.
+
+## Primary Sequence
+
+Step 1: User clicks on "Create tab" in Classes page.
+
+Step 2: User is prompted to name the tab
+
+Step 3: User is taken to new tab
+
+Step 4: User can upload files, type in questions and answers related to the class in the newly created tab
+
+## Primary Postconditions
+
+New tab is created in the Class page.
+
+## Alternate Sequences
+
+*User enters name for the tab that is identical to another tab that is already created:
+
+Step 1: Display message that another tab with the same name already exists and if the user still wants to continue
+Step 2: User can either continue with creation or exit process
+
+### Alternate Trigger
+
+User enters already created tab name.
+
+### Alternate Postconditions:
+
+User is taken to tab.
+
+###################
 
