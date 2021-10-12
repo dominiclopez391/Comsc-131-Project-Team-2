@@ -1,5 +1,9 @@
 ### Team 2 Project
 
+https://github.com/dominiclopez391/Comsc-131-Project-Team-2.git
+
+Brandon Gong: https://github.com/btgong
+ 
 Date: September 21, 2021
 
 ### Product Name: StudyAid 
