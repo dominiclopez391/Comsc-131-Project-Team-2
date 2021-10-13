@@ -2,6 +2,7 @@
 
 https://github.com/dominiclopez391/Comsc-131-Project-Team-2.git
 
+Vidhyut Gopinath : https://github.com/VidhyutG
 Brandon Gong: https://github.com/btgong
 Dominic Lopez: dominiclopez391
 Pranav Arora: https://github.com/AroraPranav
