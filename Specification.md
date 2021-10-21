@@ -1,10 +1,12 @@
+
+
 General Features:
 
 Ability for users to sign-up, login/logout.
 
 (done) Be able to delete account(vidhyut)
 
-Public/private setting (Brandon)
+Public/private settings (Brandon)
 
 Memorizing: 
 
