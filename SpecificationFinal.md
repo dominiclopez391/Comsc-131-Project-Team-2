@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### Team 2 Project
 
 https://github.com/dominiclopez391/Comsc-131-Project-Team-2.git
@@ -861,4 +862,3 @@ User enters already created tab name.
 ### Alternate Postconditions:
 
 User is taken to tab.
-

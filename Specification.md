@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 General Features:
 
 Ability for users to sign-up, login/logout.
@@ -929,6 +930,3 @@ User enters already created tab name.
 ### Alternate Postconditions:
 
 User is taken to tab.
-
-###################
-
