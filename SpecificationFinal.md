@@ -3,7 +3,9 @@
 https://github.com/dominiclopez391/Comsc-131-Project-Team-2.git
 
 Brandon Gong: https://github.com/btgong
-Dominic Lopez: dominiclopez391
+Dominic Lopez: https://github.com/dominiclopez391
+Pranav Arora: https://github.com/AroraPranav
+Vidhyut Gopinath: https://github.com/VidhyutG
  
 Date: September 21, 2021
 
