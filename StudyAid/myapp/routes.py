@@ -1,6 +1,4 @@
 from myapp import myobj, db
-from myapp.models import TopCities
-from myapp.forms import TopCitiesForm
 
 from flask import render_template
 
