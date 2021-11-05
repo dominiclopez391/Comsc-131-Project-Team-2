@@ -13,3 +13,20 @@ class LoginForm(FlaskForm):
 
 
     submit = SubmitField("Submit")
+
+
+class RegisterForm(FlaskForm):
+    '''
+        Form which allows users to register for a new account
+    '''
+
+    username = StringField('Username', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired()])
+
+    password = PasswordField('Password', validators=[DataRequired()])
+    reenterPassword = PasswordField('Reenter Password', validators=[DataRequired()])
+
+    submit = SubmitField("Submit")
+
+    
+
