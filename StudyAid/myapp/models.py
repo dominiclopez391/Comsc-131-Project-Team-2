@@ -1,4 +1,5 @@
 from myapp import db
+from myapp import login
 from werkzeug.security import check_password_hash, generate_password_hash
 
 class User(db.Model):
@@ -15,6 +16,17 @@ class User(db.Model):
     email = db.Column(db.String(128), index=True, unique=True)
 
     password_hash = db.Column(db.String(128))
+    
+    def check_password(self, password):
+        return check_password_hash(self.password_hash, password)
+   
+    #necessary properties and methods for User objects, required by flask_login
+    is_active = True
+    is_anonymous = False
+    is_authenticated = True
+    
+    def get_id(self):
+        return self.id
 
     @staticmethod
     def check_valid_credentials(username, email, password, reenterPassword):
@@ -39,6 +51,9 @@ class User(db.Model):
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
-            
+    
+    @login.user_loader
+    def load_user(id):
+            return User.query.get(int(id))
 
 

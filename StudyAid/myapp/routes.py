@@ -1,7 +1,10 @@
 from myapp import myobj, db
-from myapp.forms import RegisterForm
+from myapp.forms import RegisterForm, LoginForm
 from myapp.models import User
 from flask import render_template, flash, redirect
+from flask_login import login_user, logout_user, current_user
+
+from myapp import login
 
 
 @myobj.route("/")
@@ -12,8 +15,40 @@ def main():
         returns:
             render_template: Webpage information for main page
     '''
-    return render_template('home.html')
+    return render_template('home.html', user=current_user)
 
+@myobj.route("/login", methods=['GET', 'POST'])
+def login():
+    '''
+        creates a login page for users to login to their account.
+
+        returns:
+            render_template: Webpage for users to enter credentails and login
+    '''
+    form = LoginForm()
+
+    if(form.validate_on_submit()): #login attempt
+
+        username = form.username.data
+        password = form.password.data
+        remember_me = form.remember_me.data
+
+        user = User.query.filter_by(username = username).first()
+
+        if(user is None or not user.check_password(form.password.data)):
+            flash('incorrect password, try again')
+            return redirect('/login')
+
+        login_user(user, remember = remember_me)
+        return redirect('/')
+
+    return render_template('login.html', form=form)
+
+
+@myobj.route("/logout")
+def logout():
+    logout_user()
+    return redirect("/")
 
 @myobj.route("/register", methods=["GET", "POST"])
 def register():
