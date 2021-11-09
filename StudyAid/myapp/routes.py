@@ -81,7 +81,22 @@ def register():
         return redirect('/')
 
     return render_template('register.html', form=form)
-    
+
+@myobj.route("/options", methods=["GET", "POST"])
+def options():
+
+	'''
+	Creates an options page for users to change account settings
+	'''
+	form = OptionsForm()
+
+	if (form.validate_on_submit()):
+
+		current_user.setPublic(form.public.data)
+
+	return redirect('/')
+
+
 
 
 
