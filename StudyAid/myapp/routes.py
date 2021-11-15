@@ -1,5 +1,5 @@
 from myapp import myobj, db
-from myapp.forms import RegisterForm, LoginForm
+from myapp.forms import RegisterForm, LoginForm, OptionsForm
 from myapp.models import User
 from flask import render_template, flash, redirect
 from flask_login import login_user, logout_user, current_user
@@ -85,16 +85,17 @@ def register():
 @myobj.route("/options", methods=["GET", "POST"])
 def options():
 
-	'''
-	Creates an options page for users to change account settings
-	'''
-	form = OptionsForm()
+    '''
+    Creates an options page for users to change account settings
+    '''
+    form = OptionsForm()
 
-	if (form.validate_on_submit()):
-
-		current_user.setPublic(form.public.data)
-
-	return redirect('/')
+    if (form.validate_on_submit()):
+        current_user.setPublic(form.public.data)
+        return redirect('/')
+        
+    return render_template('options.html', form=form, current_user=current_user)
+                	
 
 
 

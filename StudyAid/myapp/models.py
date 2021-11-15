@@ -1,6 +1,7 @@
 from myapp import db
 from myapp import login
 from werkzeug.security import check_password_hash, generate_password_hash
+from flask_login import current_user
 
 class User(db.Model):
     '''
@@ -34,7 +35,11 @@ class User(db.Model):
         return self.public
 
     def setPublic(self, public):
-        self.public = public
+        
+        current_user.public = public
+        db.session.commit()
+        
+
 
     @staticmethod
     def check_valid_credentials(username, email, password, reenterPassword):
