@@ -10,10 +10,12 @@ class User(db.Model):
         self.username = username
         self.email = email
         self.set_password(password)
+        self.public = True
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(128), index=True, unique=True)
+    public = db.Column(db.Boolean, index=True)
 
     password_hash = db.Column(db.String(128))
     
@@ -27,6 +29,12 @@ class User(db.Model):
     
     def get_id(self):
         return self.id
+
+    def getPublic(self):
+        return self.public
+
+    def setPublic(self, public):
+        self.public = public
 
     @staticmethod
     def check_valid_credentials(username, email, password, reenterPassword):

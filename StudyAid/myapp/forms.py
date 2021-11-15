@@ -29,5 +29,11 @@ class RegisterForm(FlaskForm):
 
     submit = SubmitField("Submit")
 
-    
+class OptionsForm(FlaskForm):
+    '''
+	Form which allows user to change accounts settings
+    '''
+
+    public = BooleanField('Public')
+    submit = SubmitField("Submit")
 
