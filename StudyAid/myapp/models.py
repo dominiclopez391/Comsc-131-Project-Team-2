@@ -31,10 +31,10 @@ class User(db.Model):
         return self.id
 
     def getPublic(self):
-	return self.public
+        return self.public
 
     def setPublic(self, public):
-	self.public = public
+        self.public = public
 
     @staticmethod
     def check_valid_credentials(username, email, password, reenterPassword):
