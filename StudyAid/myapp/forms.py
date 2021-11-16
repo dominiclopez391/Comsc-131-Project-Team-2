@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, BooleanField, IntegerField, SubmitField, PasswordField
 from wtforms.validators import DataRequired
-
+from flask_login import current_user
 
 class LoginForm(FlaskForm):
     '''
@@ -33,7 +33,13 @@ class OptionsForm(FlaskForm):
     '''
 	Form which allows user to change accounts settings
     '''
-
     public = BooleanField('Public')
-    submit = SubmitField("Submit")
+    submit = SubmitField('Submit')
+    
+
+
+
+
+
+        
 

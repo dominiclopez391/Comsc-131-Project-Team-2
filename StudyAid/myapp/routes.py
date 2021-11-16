@@ -88,8 +88,7 @@ def options():
     '''
     Creates an options page for users to change account settings
     '''
-    form = OptionsForm()
-
+    form = OptionsForm(obj=current_user)
     if (form.validate_on_submit()):
         current_user.setPublic(form.public.data)
         return redirect('/')
