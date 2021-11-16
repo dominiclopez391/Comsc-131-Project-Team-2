@@ -95,7 +95,21 @@ def options():
         
     return render_template('options.html', form=form, current_user=current_user)
                 	
+@myobj.route("/delete", methods=["GET", "POST"])
+def delete():
 
+    '''
+    Creates an delete setting on the options page for users
+    '''
+    user_to_delete = current_user
+    db.session.delete(user_to_delete)
+    db.session.commit
+    
+    if (form.validate_on_submit()):
+        
+        return redirect('/')
+        
+    return render_template('options.html', form=form, current_user=current_user)
 
 
 
