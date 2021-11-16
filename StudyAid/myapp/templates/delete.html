@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Create an account</h1>
+<h1>Account Deletion Form </h1>
 
 <form action = "" method = "POST" novalidate>
     {{form.hidden_tag()}}
@@ -21,6 +21,9 @@
     <p>
         {{form.reenterPassword.label}}
         {{form.reenterPassword(size=64)}}
+    </p>
+    <p>    
+        {{form.confirmation.label}}
     </p>
     {{form.submit()}}
 </form>
