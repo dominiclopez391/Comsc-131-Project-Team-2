@@ -106,7 +106,7 @@ def delete():
     
     if (form.validate_on_submit()):
         db.session.delete(user_to_delete)
-        db.session.commit
+        db.session.commit()
         return redirect('/logout')
         
     return render_template('delete.html', form=form, current_user=current_user)
