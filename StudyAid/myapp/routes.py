@@ -101,15 +101,15 @@ def delete():
     '''
     Creates an delete setting on the options page for users
     '''
+    form = DeleteForm()
     user_to_delete = current_user
-    db.session.delete(user_to_delete)
-    db.session.commit
     
     if (form.validate_on_submit()):
+        db.session.delete(user_to_delete)
+        db.session.commit
+        return redirect('/logout')
         
-        return redirect('/')
-        
-    return render_template('options.html', form=form, current_user=current_user)
+    return render_template('delete.html', form=form, current_user=current_user)
 
 
 
