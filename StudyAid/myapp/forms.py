@@ -35,6 +35,9 @@ class OptionsForm(FlaskForm):
     '''
     public = BooleanField('Public')
     submit = SubmitField('Submit')
+    delete = StringField('Deactivate', validators=[DataRequired()])
+	
+	
     
 
 
