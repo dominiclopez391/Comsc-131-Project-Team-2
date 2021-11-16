@@ -1,5 +1,5 @@
 from myapp import myobj, db
-from myapp.forms import RegisterForm, LoginForm, OptionsForm
+from myapp.forms import RegisterForm, LoginForm, OptionsForm, DeleteForm
 from myapp.models import User
 from flask import render_template, flash, redirect
 from flask_login import login_user, logout_user, current_user
