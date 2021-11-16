@@ -7,13 +7,12 @@
 
 {% block content %}
 <h1> Options </h1>
-
+<a href = '/delete'> Delete Account </a>
 <form action="" method="POST">
 	{{form.hidden_tag()}}
 	<p>
 		{{form.public.label}}
 		{{form.public(size=32)}}
-		{{form.delete.label}}
 	</p>
 	{{form.submit()}}
 </form>
