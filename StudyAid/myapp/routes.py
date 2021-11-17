@@ -1,5 +1,5 @@
 from myapp import myobj, db
-from myapp.forms import RegisterForm, LoginForm, OptionsForm
+from myapp.forms import RegisterForm, LoginForm, OptionsForm, SearchForm
 from myapp.models import User
 from flask import render_template, flash, redirect
 from flask_login import login_user, logout_user, current_user
@@ -94,7 +94,20 @@ def options():
         return redirect('/')
         
     return render_template('options.html', form=form, current_user=current_user)
-                	
+
+@myobj.route("/search", methods=["GET","POST"])
+def search():
+	'''
+	Creates a search page for users to search other public users
+	'''
+	form = SearchForm()
+	users = None
+	if(form.validate_on_submit()):
+		input = form.search.data
+		users = User.query.filter(User.username.like("%" + input + "%"))
+		if users.first() is None:
+			flash('No users found!')
+	return render_template('search.html', form=form, users=users)
 
 
 

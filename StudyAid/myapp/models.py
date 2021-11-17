@@ -38,8 +38,6 @@ class User(db.Model):
         
         current_user.public = public
         db.session.commit()
-        
-
 
     @staticmethod
     def check_valid_credentials(username, email, password, reenterPassword):

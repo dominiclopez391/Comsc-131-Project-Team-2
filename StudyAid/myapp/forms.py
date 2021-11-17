@@ -12,7 +12,6 @@ class LoginForm(FlaskForm):
 
     remember_me = BooleanField('Remember Me')
 
-
     submit = SubmitField("Submit")
 
 
@@ -35,7 +34,12 @@ class OptionsForm(FlaskForm):
     '''
     public = BooleanField('Public')
     submit = SubmitField('Submit')
-    
+
+class SearchForm(FlaskForm):
+	
+	search = StringField("Search for user")
+	submit = SubmitField("Submit")
+
 
 
 
