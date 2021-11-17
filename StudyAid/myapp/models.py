@@ -3,6 +3,19 @@ from myapp import login
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import current_user
 
+
+classrooms = db.Table('classrooms',
+        db.Column('classrom_id', db.Integer, db.ForeignKey('classroom.id'), primary_key=True),
+        db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True)
+)
+
+class Classroom(db.Model):
+    def __init__(self, name):
+        self.name = name
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128), index=True, unique=True)
+
 class User(db.Model):
     '''
         User database structure for storing into database
@@ -17,6 +30,9 @@ class User(db.Model):
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(128), index=True, unique=True)
     public = db.Column(db.Boolean, index=True)
+    
+    classrooms = db.relationship('Classroom', secondary=classrooms, lazy="subquery",
+            backref=db.backref('users', lazy=True))
 
     password_hash = db.Column(db.String(128))
     

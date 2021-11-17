@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+	
+<form action="" method="POST" novalidate>
+	{{searchClassroom.hidden_tag()}}
+	<p>
+	{{searchClassroom.name.label}} <br>
+	{{searchClassroom.name(size=32)}}
+	</p>
+	{{searchClassroom.submit()}}
+	
+</form>
+	{% if hits %}
+		<p>
+			Can't find what you're looking for?
+			<a href="/createClassroom">Create a classroom</a>
+		</p>
+		{% for c in hits %}
+			<h1>{{c.name}}</h1>
+		{% endfor %}
+	{% endif %}
+
+{% endblock %}

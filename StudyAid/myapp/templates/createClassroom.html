@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="" method="POST" novalidate>
+	{{create_classroom.hidden_tag()}}
+	<p>
+		{{create_classroom.name.label()}}
+		{{create_classroom.name(size=32)}}
+	</p>
+	{{create_classroom.submit()}}
+</form>
+
+{% endblock %}

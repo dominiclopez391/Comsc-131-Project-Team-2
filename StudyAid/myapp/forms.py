@@ -37,8 +37,21 @@ class OptionsForm(FlaskForm):
     submit = SubmitField('Submit')
     
 
+class SearchClassroomsForm(FlaskForm):
+    '''
+        Form which allows user to search for different classrooms
+    '''
 
+    name = StringField('Classroom Name')
+    submit = SubmitField('Search')
 
+class CreateClassroomForm(FlaskForm):
+    '''
+        Form which allows a user to create a new classroom.
+    '''
+
+    name = StringField('New Classroom Name')
+    submit = SubmitField('Create')
 
 
         

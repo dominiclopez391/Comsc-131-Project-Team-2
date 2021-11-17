@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<a href="findClassroom">Find a classroom</a>
+
+{% for c in user_classrooms %}
+
+<h1>{{c.name}}</h1>
+
+{% endfor %}
+
+{% endblock %}
