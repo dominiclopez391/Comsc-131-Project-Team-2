@@ -10,7 +10,14 @@ classrooms = db.Table('classrooms',
 )
 
 class Classroom(db.Model):
+    '''
+        Classroom database structure used for storing classrooms in database
+    '''
     def __init__(self, name):
+        '''
+            Parameters:
+                name (string): The name of the classroom object, which other users can search for
+        '''
         self.name = name
 
     id = db.Column(db.Integer, primary_key=True)
@@ -21,6 +28,13 @@ class User(db.Model):
         User database structure for storing into database
     '''
     def __init__(self, username, email, password):
+        '''
+            Parameters:
+                Username (string): Username of the user
+                Password (string): Password of the user, unencrypted
+
+        '''
+
         self.username = username
         self.email = email
         self.set_password(password)
