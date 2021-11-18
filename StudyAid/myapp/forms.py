@@ -35,6 +35,21 @@ class OptionsForm(FlaskForm):
     public = BooleanField('Public')
     submit = SubmitField('Submit')
 
+class DeleteForm(FlaskForm):
+    '''
+        Form which allows users to delete their account
+    '''
+
+    username = StringField('Username', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired()])
+
+    password = PasswordField('Password', validators=[DataRequired()])
+    reenterPassword = PasswordField('Reenter Password', validators=[DataRequired()])
+
+    submit = SubmitField("Submit")
+    confirmation = BooleanField('Are you sure')
+
+    
 class SearchForm(FlaskForm):
 	
 	search = StringField("Search for user")

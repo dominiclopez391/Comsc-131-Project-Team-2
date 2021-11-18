@@ -1,5 +1,6 @@
 from myapp import myobj, db
-from myapp.forms import RegisterForm, LoginForm, OptionsForm, SearchForm
+from myapp.forms import RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm
+
 from myapp.models import User
 from flask import render_template, flash, redirect
 from flask_login import login_user, logout_user, current_user
@@ -95,6 +96,21 @@ def options():
         
     return render_template('options.html', form=form, current_user=current_user)
 
+@myobj.route("/delete", methods=["GET", "POST"])
+def delete():
+    '''
+    Creates an delete setting on the options page for users
+    '''
+    form = DeleteForm()
+    user_to_delete = current_user
+    
+    if (form.validate_on_submit()):
+        db.session.delete(user_to_delete)
+        db.session.commit()
+        return redirect('/logout')
+        
+    return render_template('delete.html', form=form, current_user=current_user)
+
 @myobj.route("/search", methods=["GET","POST"])
 def search():
 	'''
@@ -108,8 +124,6 @@ def search():
 		if users.first() is None:
 			flash('No users found!')
 	return render_template('search.html', form=form, users=users)
-
-
 
 
 
