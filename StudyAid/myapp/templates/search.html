@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> Search </h1>
+
+<form action="" method="POST" novalidate>
+	{{form.hidden_tag()}}
+	<p>
+		{{form.search.label}}
+		{{form.search(size=32)}}
+	</p>
+	{{form.submit()}}
+</form>
+
+{% if users %}
+{% for user in users %}
+	<p> {{user.username}} </p>
+{% endfor %}
+{% endif %}
+
+{% endblock %}

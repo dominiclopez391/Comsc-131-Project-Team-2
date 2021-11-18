@@ -12,7 +12,6 @@ class LoginForm(FlaskForm):
 
     remember_me = BooleanField('Remember Me')
 
-
     submit = SubmitField("Submit")
 
 
@@ -51,9 +50,11 @@ class DeleteForm(FlaskForm):
     confirmation = BooleanField('Are you sure')
 
     
+class SearchForm(FlaskForm):
 	
-	
-    
+	search = StringField("Search for user")
+	submit = SubmitField("Submit")
+
 
 
 
