@@ -1,7 +1,6 @@
 from myapp import myobj, db
-from myapp.forms import RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm
-
-from myapp.models import User
+from myapp.forms import RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm, SearchClassroomsForm, CreateClassroomForm
+from myapp.models import User, Classroom
 from flask import render_template, flash, redirect
 from flask_login import login_user, logout_user, current_user
 
@@ -125,9 +124,61 @@ def search():
 			flash('No users found!')
 	return render_template('search.html', form=form, users=users)
 
+@myobj.route("/classrooms", methods=["GET", "POST"])
+def classrooms():
+    '''
+    Creates a webpage for navigating to classrooms. Will list every classroom a user has joined,
+    otherwise they can search or create a new classroom which will bring them to a new webpage.
+    '''
+
+    user_classrooms = current_user.classrooms
 
 
+    return render_template('classrooms.html', user_classrooms=user_classrooms)
+
+
+@myobj.route("/findClassroom", methods=["GET", "POST"])
+def find_classroom():
+    '''
+    lets the user search for a classroom. If the classroom they are searching for cannot be found,
+    they can navigate to the "create classroom" field.
+    '''
+
+
+    search_classrooms = SearchClassroomsForm()
+    hits = None
+    if(search_classrooms.validate_on_submit()):
+        hits = Classroom.query.filter(Classroom.name.like("%" + search_classrooms.name.data + "%"))
+    
+
+    return render_template('findClassroom.html', searchClassroom=search_classrooms, hits=hits)
         
+@myobj.route("/createClassroom", methods=["GET", "POST"])
+def create_classroom():
+    '''
+    webpage that lets users create new classrooms.
+    '''
+    create_classroom = CreateClassroomForm()
+    if(create_classroom.validate_on_submit()):
+        if(Classroom.query.filter_by(name=create_classroom.name.data).first() is not None):
+            flash("Error: this classroom already exists. Please try again.")
+        else:
+
+            newClassroom = Classroom(create_classroom.name.data)
+            db.session.add(newClassroom)
+            current_user.classrooms.append(newClassroom)
+            db.session.commit()
+
+            flash("Classroom creation successful!")
+
+    return render_template('createClassroom.html', create_classroom=create_classroom)
+            
+        
+
+
+
+
+    
 
         
 
