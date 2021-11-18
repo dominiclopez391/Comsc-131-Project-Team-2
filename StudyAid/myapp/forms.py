@@ -51,6 +51,9 @@ class DeleteForm(FlaskForm):
 
     
 class SearchForm(FlaskForm):
+	'''
+	Form which allows users to search for other users
+	'''
 	
 	search = StringField("Search for user")
 	submit = SubmitField("Submit")

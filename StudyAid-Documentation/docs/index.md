@@ -1,17 +1,18 @@
-# Welcome to MkDocs
+# Welcome to StudyAid
+** For Comsc 131 - ** 
+** Dominic Lopez, Brandon Gong, Vidhyut Gopinath, Pranav, Arora **
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Commands
+To run the application, you must navigate to the StudyAid directory and run the command: 'python3 run.py'
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+[run.py](/run.md)
 
-## Project layout
+Myapp
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+[  - __init__.py](/init.md)
+
+[  - forms.py](/forms.md)
+
+[  - routes.py](/routes.md)
+
+[  - models.py](/models.md)
