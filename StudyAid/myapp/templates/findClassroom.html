@@ -16,7 +16,7 @@
 			<a href="/createClassroom">Create a classroom</a>
 		</p>
 		{% for c in hits %}
-			<h1>{{c.name}}</h1>
+		<h1><a href="/invite/{{c.id}}">{{c.name}}</a></h1>
 		{% endfor %}
 	{% endif %}
 

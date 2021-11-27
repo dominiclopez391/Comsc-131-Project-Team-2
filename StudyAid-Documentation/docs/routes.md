@@ -126,3 +126,13 @@ def create_classroom():
         Returns:
             render_template: webpage for creating a classroom
     '''
+
+
+def join_classroom(classroom_id):
+    
+    '''
+        Webpage that adds user to a classroom based on the id in the URL.
+
+        Returns: 
+            redirect to classroom
+    '''
