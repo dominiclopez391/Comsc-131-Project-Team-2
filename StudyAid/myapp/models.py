@@ -21,7 +21,8 @@ class Classroom(db.Model):
         self.name = name
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(128), index=True, unique=True)
+    name = db.Column(db.String(128), index=True, unique=True)    
+
 
 class User(db.Model):
     '''
@@ -41,10 +42,11 @@ class User(db.Model):
         self.public = True
 
     id = db.Column(db.Integer, primary_key=True)
+    __tablename__ = "user"
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(128), index=True, unique=True)
     public = db.Column(db.Boolean, index=True)
-    
+
     classrooms = db.relationship('Classroom', secondary=classrooms, lazy="subquery",
             backref=db.backref('users', lazy=True))
 
@@ -144,6 +146,6 @@ class User(db.Model):
         '''
 
 
-            return User.query.get(int(id))
+        return User.query.get(int(id))
 
 

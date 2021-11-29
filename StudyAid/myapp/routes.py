@@ -165,6 +165,25 @@ def classrooms():
 
     return render_template('classrooms.html', user_classrooms=user_classrooms)
 
+@myobj.route("/classrooms/<classroom_id>")
+def classroom(classroom_id):
+    '''
+        The currently selected classroom. Todo: add messages here
+    '''
+    classroom = Classroom.query.filter_by(id=classroom_id).first()
+    if(classroom is None):
+        flash("classroom not found")
+        return redirect('/classrooms')
+   
+    if(not classroom in current_user.classrooms):
+        flash ("You are not a member of this classroom.")
+        return redirect("/classrooms")
+
+    invite_dir = classroom.id
+    classroom_name = classroom.name
+
+    return render_template("classroom.html", invite_dir=invite_dir, classroom_name=classroom_name)
+        
 
 @myobj.route("/findClassroom", methods=["GET", "POST"])
 def find_classroom():
@@ -206,22 +225,29 @@ def create_classroom():
 
             flash("Classroom creation successful!")
 
+            return redirect(f"classrooms/{newClassroom.id}")
+
     return render_template('createClassroom.html', create_classroom=create_classroom)
-            
-        
 
+@myobj.route("/invite/<classroom_id>")
+def join_classroom(classroom_id):
+    '''
+        Webpage that adds user to a classroom based on the id in the URL.
 
+            returns: redirect to classroom
+    '''
+    classroom = Classroom.query.filter_by(id=classroom_id).first()
+    if(classroom is None):
+        flash("Error: this classroom does not exist. Please try again.")
+    else:
+        if(not classroom in current_user.classrooms):
+            flash("Joined classroom!")
+            current_user.classrooms.append(classroom)
+        else:
+            flash("You are already a member of this classroom.")
+        db.session.commit()
 
-
-    
-
-        
-
-        
-
-        
-
-
+    return redirect(f'/classrooms/{classroom_id}')
 
 
 
