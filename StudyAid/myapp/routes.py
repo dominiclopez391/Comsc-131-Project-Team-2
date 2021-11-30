@@ -165,7 +165,7 @@ def classrooms():
 
     return render_template('classrooms.html', user_classrooms=user_classrooms)
 
-@myobj.route("/classrooms/<classroom_id>")
+@myobj.route("/classrooms/<classroom_id>", methods=["GET", "POST"])
 def classroom(classroom_id):
     '''
         The currently selected classroom. Todo: add messages here
