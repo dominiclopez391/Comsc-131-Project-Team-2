@@ -75,6 +75,11 @@ class CreateClassroomForm(FlaskForm):
     name = StringField('New Classroom Name')
     submit = SubmitField('Create')
 
-
+class MessageForm(FlaskForm):
+    '''
+        Form for users when they message each other
+    '''
+    message = StringField('Message', validators=[DataRequired()])
+    submit = SubmitField("Submit")
         
 
