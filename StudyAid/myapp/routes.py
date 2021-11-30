@@ -1,6 +1,6 @@
 from myapp import myobj, db
-from myapp.forms import RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm, SearchClassroomsForm, CreateClassroomForm
-from myapp.models import User, Classroom
+from myapp.forms import RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm, SearchClassroomsForm, CreateClassroomForm, MessageForm
+from myapp.models import User, Classroom, Chat
 from flask import render_template, flash, redirect
 from flask_login import login_user, logout_user, current_user
 
@@ -165,7 +165,7 @@ def classrooms():
 
     return render_template('classrooms.html', user_classrooms=user_classrooms)
 
-@myobj.route("/classrooms/<classroom_id>")
+@myobj.route("/classrooms/<classroom_id>", methods=["GET", "POST"])
 def classroom(classroom_id):
     '''
         The currently selected classroom. Todo: add messages here
@@ -181,8 +181,16 @@ def classroom(classroom_id):
 
     invite_dir = classroom.id
     classroom_name = classroom.name
+    form = MessageForm()
+    if form.validate_on_submit():
+        message = Chat(current_user.username, form.message.data)
+        classroom.messages.append(message)
+        db.session.commit()
 
-    return render_template("classroom.html", invite_dir=invite_dir, classroom_name=classroom_name)
+    messages = classroom.messages	
+	
+
+    return render_template("classroom.html", invite_dir=invite_dir, classroom_name=classroom_name, form=form, messages=messages)
         
 
 @myobj.route("/findClassroom", methods=["GET", "POST"])
