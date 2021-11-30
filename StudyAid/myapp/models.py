@@ -8,11 +8,21 @@ classrooms = db.Table('classrooms',
         db.Column('classrom_id', db.Integer, db.ForeignKey('classroom.id'), primary_key=True),
         db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True)
 )
-
+class Chat(db.Model):
+        __tablename__ = "chat"
+        id = db.Column(db.Integer, primary_key=True)
+        classroom_id = db.Column(db.Integer, Foreignkey("classroom.id"))
+        message = db.Column(db.String(10000), index = True)
+        sender = db.Column(db.String(64), index = True)
+        
+                                 
 class Classroom(db.Model):
     '''
         Classroom database structure used for storing classrooms in database
     '''
+    __tablename__ = "classroom"
+    messages = db.relationship("Chat", back_populates = "classroom")
+        
     def __init__(self, name):
         '''
             Parameters:
