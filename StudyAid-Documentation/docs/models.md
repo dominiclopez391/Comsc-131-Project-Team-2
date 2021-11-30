@@ -1,3 +1,18 @@
+### class Chat(db.Model):
+
+	'''
+	Chat database structure for adding comments to database
+	'''
+
+	def __init__(self, sender, message)
+
+	'''
+		Parameters:
+			sender (string): Username of the user that sent this message
+			message (string): Message the user sent to the classroom chat
+	'''
+
+
 ### class Classroom(db.Model):
 
 

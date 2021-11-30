@@ -14,7 +14,6 @@ class Chat(db.Model):
         classroom_id = db.Column(db.Integer, db.ForeignKey("classroom.id"))
         message = db.Column(db.String(10000), index = True)
         sender = db.Column(db.String(64), index = True)
-        
         def __init__(self, sender, message):
                 ''' Creates a new chat object
                 '''
@@ -28,7 +27,7 @@ class Classroom(db.Model):
         Classroom database structure used for storing classrooms in database
     '''
     __tablename__ = "classroom"
-    messages = db.relationship("Chat", back_populates = "classroom")
+    messages = db.relationship("Chat")
         
     def __init__(self, name):
         '''

@@ -88,6 +88,16 @@ def search():
 
         '''
 
+def classroom():
+
+	'''
+	Creates webpage for specific classroom that user joined. User from here can
+	send and read messages submitted to this classroom through the given form.
+
+	Returns:
+		render_template: Classroom webpage with chat functionality
+
+	'''
 
 def classrooms():
 
