@@ -15,6 +15,13 @@ class Chat(db.Model):
         message = db.Column(db.String(10000), index = True)
         sender = db.Column(db.String(64), index = True)
         
+        def __init__(self, sender, message):
+                ''' Creates a new chat object
+                '''
+                self.sender = sender
+                self.message = message
+                
+        
                                  
 class Classroom(db.Model):
     '''
