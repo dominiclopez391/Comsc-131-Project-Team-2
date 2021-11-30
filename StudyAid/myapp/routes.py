@@ -1,5 +1,5 @@
 from myapp import myobj, db
-from myapp.forms import RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm, SearchClassroomsForm, CreateClassroomForm
+from myapp.forms import RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm, SearchClassroomsForm, CreateClassroomForm, MessageForm
 from myapp.models import User, Classroom
 from flask import render_template, flash, redirect
 from flask_login import login_user, logout_user, current_user
@@ -181,8 +181,15 @@ def classroom(classroom_id):
 
     invite_dir = classroom.id
     classroom_name = classroom.name
+    form = MessageForm()
+    if form.validate_on_submit():
+	message = Chat(current_user.username, form.message.data)
+	classroom.messages.append(message)
 
-    return render_template("classroom.html", invite_dir=invite_dir, classroom_name=classroom_name)
+    messages = classroom.messages	
+	
+
+    return render_template("classroom.html", invite_dir=invite_dir, classroom_name=classroom_name, form=form, messages=messages)
         
 
 @myobj.route("/findClassroom", methods=["GET", "POST"])
