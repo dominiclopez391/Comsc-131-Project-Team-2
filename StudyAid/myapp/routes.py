@@ -183,8 +183,8 @@ def classroom(classroom_id):
     classroom_name = classroom.name
     form = MessageForm()
     if form.validate_on_submit():
-	message = Chat(current_user.username, form.message.data)
-	classroom.messages.append(message)
+        message = Chat(current_user.username, form.message.data)
+        classroom.messages.append(message)
 
     messages = classroom.messages	
 	

@@ -11,7 +11,7 @@ classrooms = db.Table('classrooms',
 class Chat(db.Model):
         __tablename__ = "chat"
         id = db.Column(db.Integer, primary_key=True)
-        classroom_id = db.Column(db.Integer, Foreignkey("classroom.id"))
+        classroom_id = db.Column(db.Integer, db.ForeignKey("classroom.id"))
         message = db.Column(db.String(10000), index = True)
         sender = db.Column(db.String(64), index = True)
         
