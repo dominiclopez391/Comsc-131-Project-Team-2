@@ -1,7 +1,17 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, BooleanField, IntegerField, SubmitField, PasswordField
-from wtforms.validators import DataRequired
+from wtforms import StringField, BooleanField, IntegerField, SubmitField, PasswordField, TextAreaField
+from wtforms.validators import DataRequired, optional
 from flask_login import current_user
+
+class NotesForm(FlaskForm):
+    '''
+        Form which allows users to create their own notes
+    '''
+    title = StringField('Title', validators=[DataRequired()])
+    body = TextAreaField('Body', validators=[optional()])
+
+    submit = SubmitField('Submit')
+
 
 class LoginForm(FlaskForm):
     '''

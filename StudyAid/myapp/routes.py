@@ -1,6 +1,6 @@
 from myapp import myobj, db
-from myapp.forms import RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm, SearchClassroomsForm, CreateClassroomForm, MessageForm
-from myapp.models import User, Classroom, Chat
+from myapp.forms import RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm, SearchClassroomsForm, CreateClassroomForm, MessageForm, NotesForm
+from myapp.models import User, Classroom, Chat, Note
 from flask import render_template, flash, redirect
 from flask_login import login_user, logout_user, current_user
 
@@ -257,5 +257,29 @@ def join_classroom(classroom_id):
 
     return redirect(f'/classrooms/{classroom_id}')
 
+@myobj.route("/notes/create", methods=["GET", "POST"])
+def create_note():
+    '''
+        Webpage which allows users to create their own notes.
 
+            returns: render template for creating notes page
+    '''
+    form = NotesForm()
+    if(form.validate_on_submit()):
+        newNote = Note(form.title.data, form.body.data)
+        current_user.notes.append(newNote)
+        db.session.commit()
+        return redirect("/notes")
+    return render_template("createNote.html", form=form)
+
+@myobj.route("/notes")
+def view_notes():
+    '''
+        Webpage allows user to view their created notes.
+
+            returns: render template for notes page
+    '''
+    notes = current_user.notes
+
+    return render_template('notes.html', notes=notes)
 
