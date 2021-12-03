@@ -14,6 +14,20 @@ class LoginForm(FlaskForm):
 
     submit = SubmitField("Submit")
 
+class QuestionForm(FlaskForm):
+	'''
+		Form which allows user to post questions in classroom
+	'''
+	question = StringField('Question', validators=[DataRequired()])
+	submit = SubmitField('Submit')
+
+class AnswerForm(FlaskForm):
+	'''
+		Form which allows user to answer questions in classroom
+	'''
+	answer = StringField("Answer", validators=[DataRequired()])
+	submit = SubmitField('Submit')
+
 
 class RegisterForm(FlaskForm):
     '''
