@@ -8,8 +8,7 @@
 		{% endblock %}
 	</head>
 	<body>
-	<div class = "text-center" style="background-image: url("{{ url_for('static', filename='whitebg.jpeg') }}");>
-		
+	<div class = "text-center" style=background-image:url('static/Bckgrnd.jpg')>
 		{% with messages = get_flashed_messages() %} 
 			{% if messages %}
 				{% for message in messages %}
