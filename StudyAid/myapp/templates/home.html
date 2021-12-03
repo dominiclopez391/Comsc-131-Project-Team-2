@@ -1,6 +1,17 @@
 {% extends "base.html"%}
 {% block content %}
-
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">StudyAid</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active">
+	    <li><h2><a href="/login">Login</a></h2></li>
+	    <li><h2><a href="/register">Register</a></h2></li>
+    </ul>
+  </div>
+</nav>
 	<h1> Welcome to StudyAid, 
 	{% if user.is_anonymous %}
 	stranger
