@@ -1,17 +1,12 @@
 {% extends "base.html"%}
 {% block content %}
 
-	<br><h1> Welcome To StudyAid, 
+	<br><br><h1> Welcome To StudyAid 
 	{% if user.is_anonymous %}
-	stranger
 	{% endif %}
 	{{user.username}}!</h1>
 
 {% if user.is_anonymous %}
-<div class="d-grid gap-2 col-6 mx-auto">
-<br><br><button class="btn btn-primary" type="button"><a class="text-light" href="/login">Login</a></button>
-<br><br><button class="btn btn-primary" type="button"><a class="text-light" href="/register">Register</a></button
-	</div>
 {% else %}
 <h2><a href="/search">User search</a></h2>
 <h2><a href="/options">Options</a></h2>
