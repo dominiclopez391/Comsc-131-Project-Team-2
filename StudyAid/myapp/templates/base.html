@@ -15,7 +15,23 @@
 }
 		</style>
 		<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-                <a class="navbar-brand text-light" href="#">StudyAid</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+    </button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				
+				<a class="navbar-brand text-light" href="#">StudyAid</a>
+				<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="/login">Login</a></li>
+		  <li><a class="dropdown-item" href="/register">register</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
                  
                   <div class="navbar-nav">
                  <a class="nav-item nav-link text-light active" href="/">Home</a>
