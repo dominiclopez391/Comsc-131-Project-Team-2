@@ -14,6 +14,7 @@
 			
 }
 		</style>
+		{% if user.is_anonymous %}
 	<nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">StudyAid</a>
@@ -38,6 +39,7 @@
     </div>
   </div>
 </nav>
+		<% endif %>
 	</head>
 	<body>
 	<div class = "text-center">
