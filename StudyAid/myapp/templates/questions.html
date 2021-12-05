@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> Frequently Asked Questions In {{classroom_name}}! </h1>
+<h1> Ask Question </h1>
+<form actions= "" method = "POST" novalidate>
+	{{form.hidden_tag()}}
+	
+	<p>
+	{{form.question.label}}
+	{{form.question(size = 64)}}
+	</p>
+
+	{{form.submit()}}
+</form>
+
+{% if questions %}
+
+	{% for question in questions %}
+	<h2> {{question.question}} </h2>
+	
+	{% if question.answer == None %}
+	<a href= '/classroom/answers/{{question.id}}'> Click here to answer question </a>
+	
+	{% else %}
+	<h4> {{question.answer}} </h4>
+
+	{% endif %}
+	{% endfor %}
+
+{% endif %} 
+
+
+
+{% endblock %}

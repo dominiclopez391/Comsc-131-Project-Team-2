@@ -34,14 +34,39 @@ class Chat(db.Model):
                 self.sender = sender
                 self.message = message
                 
-        
-                                 
+class Questions(db.Model):
+	'''
+		Database structure used for storing questions in classroom in database
+	'''
+	__tablename__ = "questions"
+	classroom_id = db.Column(db.Integer, db.ForeignKey('classroom.id'))
+	classroom = db.relationship("Classroom",back_populates = 'questions')
+	id = db.Column(db.Integer, primary_key=True)
+	question = db.Column(db.String(1000), index = True)
+	answer = db.Column(db.String(10000), index = True)
+	asker = db.Column(db.String(64), index = True)
+	answerer = db.Column(db.String(64), index = True)
+
+	def __init__(self, question):
+		'''
+		Creates a new Questions object
+		'''
+		self.question = question
+		asker = current_user.username
+	def answerQuestion(self, answer):
+		'''
+		Allows users to answer questions
+		'''
+		self.answer = answer
+		self.answerer = current_user.username
+
 class Classroom(db.Model):
     '''
         Classroom database structure used for storing classrooms in database
     '''
     __tablename__ = "classroom"
     messages = db.relationship("Chat")
+    questions = db.relationship("Questions", back_populates = 'classroom')
         
     def __init__(self, name):
         '''
@@ -51,7 +76,7 @@ class Classroom(db.Model):
         self.name = name
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(128), index=True, unique=True)    
+    name = db.Column(db.String(128), index=True, unique=True)
 
 
 class User(db.Model):

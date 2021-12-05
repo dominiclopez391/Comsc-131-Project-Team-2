@@ -1,6 +1,8 @@
 from myapp import myobj, db
-from myapp.forms import RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm, SearchClassroomsForm, CreateClassroomForm, MessageForm, NotesForm
-from myapp.models import User, Classroom, Chat, Note
+
+from myapp.forms import NotesForm, RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm, SearchClassroomsForm, CreateClassroomForm, MessageForm, QuestionForm, AnswerForm
+from myapp.models import User, Classroom, Chat, Questions, Note
+
 from flask import render_template, flash, redirect
 from flask_login import login_user, logout_user, current_user
 
@@ -257,6 +259,7 @@ def join_classroom(classroom_id):
 
     return redirect(f'/classrooms/{classroom_id}')
 
+
 @myobj.route("/notes/create", methods=["GET", "POST"])
 def create_note():
     '''
@@ -280,6 +283,41 @@ def view_notes():
             returns: render template for notes page
     '''
     notes = current_user.notes
-
     return render_template('notes.html', notes=notes)
+
+@myobj.route('/classroom/<classroom_id>/faq', methods=["GET","POST"])
+def questions(classroom_id):
+	'''
+		Webpage that allows user to post questions
+	'''
+	form = QuestionForm()
+	classrooms = Classroom.query.filter_by(id = classroom_id).first()
+	if(form.validate_on_submit()):
+		questions = Questions(form.question.data)
+		classrooms.questions.append(questions)
+		db.session.commit()
+
+	questions = classrooms.questions
+	return render_template('questions.html', questions = questions, classroom_name = classrooms.name, form=form)
+
+@myobj.route('/classroom/answers/<question_id>', methods=["GET","POST"])
+def answers(question_id):
+	'''
+		Webpage that allows user to answer questions
+	'''
+	form = AnswerForm()
+
+	if(form.validate_on_submit()):
+		question = Questions.query.filter_by(id = question_id).first()
+		question.answerQuestion(form.answer.data)
+		db.session.commit()
+		return redirect(f'/classroom/{question.classroom.id}/faq')
+
+	return render_template('answers.html', form = form)
+
+
+
+
+
+
 
