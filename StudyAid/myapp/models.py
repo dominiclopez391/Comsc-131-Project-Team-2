@@ -2,17 +2,47 @@ from myapp import db
 from myapp import login
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import current_user
-
+import datetime
 
 classrooms = db.Table('classrooms',
         db.Column('classrom_id', db.Integer, db.ForeignKey('classroom.id'), primary_key=True),
         db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True)
 )
 
+class Note(db.Model):
+    __tablename__ = "note"
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    title = db.Column("Title", db.String(200), index=True)
+    body = db.Column("Body", db.String(10000), index=True)
+    timestamp = db.Column(db.String(64), index=True)
+
+    def __init__(self, title, body):
+        self.title = title
+        self.body = body
+        self.timestamp = datetime.datetime.now()
+
+class Chat(db.Model):
+        __tablename__ = "chat"
+        id = db.Column(db.Integer, primary_key=True)
+        classroom_id = db.Column(db.Integer, db.ForeignKey("classroom.id"))
+        message = db.Column(db.String(10000), index = True)
+        sender = db.Column(db.String(64), index = True)
+        def __init__(self, sender, message):
+                ''' Creates a new chat object
+                '''
+                self.sender = sender
+                self.message = message
+                
+        
+                                 
 class Classroom(db.Model):
     '''
         Classroom database structure used for storing classrooms in database
     '''
+    __tablename__ = "classroom"
+    messages = db.relationship("Chat")
+        
     def __init__(self, name):
         '''
             Parameters:
@@ -21,7 +51,8 @@ class Classroom(db.Model):
         self.name = name
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(128), index=True, unique=True)
+    name = db.Column(db.String(128), index=True, unique=True)    
+
 
 class User(db.Model):
     '''
@@ -41,12 +72,15 @@ class User(db.Model):
         self.public = True
 
     id = db.Column(db.Integer, primary_key=True)
+    __tablename__ = "user"
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(128), index=True, unique=True)
     public = db.Column(db.Boolean, index=True)
-    
+
     classrooms = db.relationship('Classroom', secondary=classrooms, lazy="subquery",
             backref=db.backref('users', lazy=True))
+
+    notes = db.relationship("Note")
 
     password_hash = db.Column(db.String(128))
     
@@ -144,6 +178,6 @@ class User(db.Model):
         '''
 
 
-            return User.query.get(int(id))
+        return User.query.get(int(id))
 
 
