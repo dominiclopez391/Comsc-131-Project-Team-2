@@ -27,10 +27,10 @@
 	</nav>
 
 <h1>Welcome to {{classroom_name}}!</h1>
-<h2>Send this link to a friend to add them to this classroom: <a href=/invite/{{invite_dir}}>localhost/invite/{{invite_dir}}</a></h2><br>
-<a href="/classroom/{{invite_dir}}/faq" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Click here to go to FAQ!</a><br>
+<h2>Send this link to a friend to add them to this classroom: <a href=/invite/{{invite_dir}}>localhost/invite/{{invite_dir}}</a></h2>
+<a href="/classroom/{{invite_dir}}/faq" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Click here to go to FAQ!</a>
 <form action = "" method = "POST" novalidate >
-  
+  <br>
   {{form.hidden_tag()}}
   <p>
     {{form.message.label}}
