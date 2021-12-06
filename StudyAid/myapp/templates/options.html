@@ -1,4 +1,11 @@
 {% extends "base.html" %}
+
+{% block title %}
+	
+
+{% endblock %}
+
+{% block content %}
 <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
         <a class="navbar-brand" href="/">StudyAid</a>
@@ -23,17 +30,11 @@
         </div>
         </div>
 	</nav>
-{% block title %}
-	
-
-{% endblock %}
-
-{% block content %}
-<h1> Options </h1><br>
+<h1> Options </h1>
 <div class="list-group">
   <a href="/delete" class="list-group-item list-group-item-action active">Delete Account</a>
 </div>
-<br><p><h1>Privacy Settings</h1></p>
+<p><h1>Privacy Settings</h1></p>
 <form action="" method="POST">
 	{{form.hidden_tag()}}
 	<p>
