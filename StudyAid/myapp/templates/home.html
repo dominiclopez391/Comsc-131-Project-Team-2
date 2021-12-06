@@ -53,16 +53,13 @@
 	</nav>
 {% endif %}
 
-	{% if user.is_anonymous %}
-		<h1> Welcome To StudyAid<br>
-		{% else %}
-		<h1> Welcome To StudyAid,{{user.username}}!</h1><br>
-	{% endif %}
+	
 
 {% if user.is_anonymous %}
 			
 <img src="static/splashpage1.png">
 {% else %}
+			<br><h1> Welcome To StudyAid,{{user.username}}!</h1><br>
 <br><p><a href="/search" class="btn btn-secondary btn-lg btn-block active">Search</a></p>
 <p><a href="/classrooms" class="btn btn-secondary btn-lg btn-block active">Classrooms</a></p>
 <p><a href="/notes" class="btn btn-secondary btn-lg btn-block active">Notes</a></p>
