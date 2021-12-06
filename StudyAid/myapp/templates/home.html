@@ -53,7 +53,7 @@
 	</nav>
 {% endif %}
 
-	<br><br><h1> Welcome To StudyAid 
+	<br><h1> Welcome To StudyAid 
 	{% if user.is_anonymous %}
 	{% endif %}
 	{{user.username}}!</h1>
@@ -62,9 +62,7 @@
 <img src="static/splashpage1.png">
 {% else %}
 <a href="/search" class="btn btn-secondary btn-lg btn-block active">Search</a>
-<h2><a href="/options">Options</a></h2>
 <a href="/classrooms" class="btn btn-secondary btn-lg btn-block active">Classrooms</a>
-<h2><a href="/logout">logout</a></h2>
 <a href="/notes" class="btn btn-secondary btn-lg btn-block active">Notes</a>
 {% endif %}
 
