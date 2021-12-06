@@ -54,13 +54,13 @@
 {% endif %}
 
 	{% if user.is_anonymous %}
-		<h1> Welcome To StudyAid 
+		<h1> Welcome To StudyAid<br>
 		{% else %}
-		<h1> Welcome To StudyAid,{{user.username}}!</h1>
+		<h1> Welcome To StudyAid,{{user.username}}!</h1><br>
 	{% endif %}
 
 {% if user.is_anonymous %}
-			<br>
+			
 <img src="static/splashpage1.png">
 {% else %}
 <br><p><a href="/search" class="btn btn-secondary btn-lg btn-block active">Search</a></p>
