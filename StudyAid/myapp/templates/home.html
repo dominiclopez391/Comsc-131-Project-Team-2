@@ -53,10 +53,11 @@
 	</nav>
 {% endif %}
 
-	<br><h1> Welcome To StudyAid 
 	{% if user.is_anonymous %}
+		<br><h1> Welcome To StudyAid 
+		{% else %}
+		<br><h1> Welcome To StudyAid,{{user.username}}!</h1>
 	{% endif %}
-	,{{user.username}}!</h1>
 
 {% if user.is_anonymous %}
 <img src="static/splashpage1.png">
