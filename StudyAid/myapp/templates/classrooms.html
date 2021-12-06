@@ -26,11 +26,11 @@
         </div>
 	</nav>
 
-<a href="findClassroom">Find a classroom</a>
+<a href="/findClassroom" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Find A Classroom</a>
 
 {% for c in user_classrooms %}
 
-<h1><a href="/classrooms/{{c.id}}">{{c.name}}</a></h1>
+<a href="/classrooms/{{c.id}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">{{c.name}}</a>
 
 {% endfor %}
 
