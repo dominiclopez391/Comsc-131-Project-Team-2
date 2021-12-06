@@ -45,7 +45,7 @@
 	<h2> {{question.question}} </h2>
 	
 	{% if question.answer == None %}
-	<a href= '/classroom/answers/{{question.id}}'> Click here to answer question </a>
+	<a href="/classroom/answers/{{question.id}}" class="btn btn-secondary btn-lg btn-block active"> Click here to answer question </a>
 	
 	{% else %}
 	<h4> {{question.answer}} </h4>
