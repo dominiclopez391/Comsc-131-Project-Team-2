@@ -106,7 +106,7 @@ class MessageForm(FlaskForm):
     message = StringField('Message', validators=[DataRequired()])
     submit = SubmitField("Submit")
         
-class PomorodoTimerForm (FlaskForm):
+class PomorodoTimerForm(FlaskForm):
     study_time = IntegerField('Study Time', validators = [DataRequired()])
     start_button = SubmitField('Start')
 
