@@ -1,6 +1,6 @@
 from myapp import myobj, db
 
-from myapp.forms import NotesForm, RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm, SearchClassroomsForm, CreateClassroomForm, MessageForm, QuestionForm, AnswerForm
+from myapp.forms import NotesForm, RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm, SearchClassroomsForm, CreateClassroomForm, MessageForm, QuestionForm, AnswerForm, ShareNotesForm
 from myapp.models import User, Classroom, Chat, Questions, Note
 
 from flask import render_template, flash, redirect
@@ -284,6 +284,35 @@ def view_notes():
     '''
     notes = current_user.notes
     return render_template('notes.html', notes=notes)
+
+@myobj.route("/notes/share", methods=["GET", "POST"])
+def share_notes():
+    '''
+        Webpage which allows users to share their notes with other people, by selecting their note from a dropdown and entering the username.
+    '''
+    form = ShareNotesForm()
+
+    # 
+    options = []
+    for note in current_user.notes:
+        options.append((note.id, note.title))
+
+    form.note.choices = options
+
+    if(form.validate_on_submit()):
+        userToSendTo = User.query.filter_by(username = form.user.data).first()
+        if(userToSendTo is not None):
+            userToSendTo.notes.append(Note.query.filter_by(id=form.note.data).first())
+            db.session.commit()
+            flash(f"Note sent to {userToSendTo.username}!")
+            redirect("/notes")
+        else:
+            flash("User not found!")
+            redirect("/notes/share")
+
+    return render_template('ShareNote.html', form=form)
+            
+
 
 @myobj.route('/classroom/<classroom_id>/faq', methods=["GET","POST"])
 def questions(classroom_id):
