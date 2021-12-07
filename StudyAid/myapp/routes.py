@@ -318,7 +318,7 @@ def answers(question_id):
 
 @myobj.route('/PomodoroTimer', methods = ['GET', 'POST'])
 def pomodoro ():
-    form = pomorodoTimerForm()
+    form = PomodoroTimerForm()
     title = 'Start Timer'
     if request.method == 'POST':
         try: 
