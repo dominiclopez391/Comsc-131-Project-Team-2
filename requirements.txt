@@ -1,2 +1,2 @@
 pyttsx3==2.90
-beautifulsoup4==4.10.0
+Flask_Mail==0.9.1
