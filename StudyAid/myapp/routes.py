@@ -1,6 +1,9 @@
 from myapp import myobj, db
 import pyttsx3
 
+from bs4 import BeautifulSoup
+import requests
+
 from myapp.forms import NotesForm, RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm, SearchClassroomsForm, CreateClassroomForm, MessageForm, QuestionForm, AnswerForm, PomodoroTimerForm
 from myapp.models import User, Classroom, Chat, Questions, Note
 
