@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, BooleanField, IntegerField, SubmitField, PasswordField, TextAreaField
+from wtforms import StringField, BooleanField, IntegerField, SubmitField, PasswordField, TextAreaField, SelectField
 from wtforms.validators import DataRequired, optional
 from flask_login import current_user
 
@@ -58,6 +58,12 @@ class OptionsForm(FlaskForm):
     '''
     public = BooleanField('Public')
     submit = SubmitField('Submit')
+
+class ShareNotesForm(FlaskForm):
+    user = StringField("User to send to", validators=[DataRequired()])
+    note = SelectField("Note")
+
+    submit = SubmitField("Submit")
 
 class DeleteForm(FlaskForm):
     '''
