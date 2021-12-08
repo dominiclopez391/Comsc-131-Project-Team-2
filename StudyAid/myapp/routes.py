@@ -323,7 +323,7 @@ def answers(question_id):
 def pomodoro ():
     form = PomodoroTimerForm()
     title = 'Start Timer'
-    if request.method == 'POST':
+    if request.methods == 'POST':
         try: 
             study_time = (request.form ["study_time"])
             #break_time = (request.form ["break_time"])
