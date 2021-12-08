@@ -150,7 +150,7 @@ def search():
 	users = None
 	if(form.validate_on_submit()):
 		input = form.search.data
-		users = User.query.filter(User.username.like("%" + input + "%"))
+		users = User.query.filter(User.username.like("%" + input + "%"), User.public == True)
 		if users.first() is None:
 			flash('No users found!')
 	return render_template('search.html', form=form, users=users)
