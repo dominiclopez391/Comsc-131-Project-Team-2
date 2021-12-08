@@ -188,3 +188,23 @@ def answers(question_id):
 		redirect to certain classroom's faq page
 		render_template: Webpage for answering questions in classroom
 	'''
+
+def pomodoro():
+
+	'''
+	Webpage allows for user to use a pomodoro timer
+
+	Returns:
+		redirect to /timer
+		flash('Fail to load timer')
+		render_template: Webpage for pomodoro timer
+	'''
+
+def timer(t):
+	
+	'''
+	Creates a timer that logs time
+
+	Returns:
+		t: 25*60
+	'''

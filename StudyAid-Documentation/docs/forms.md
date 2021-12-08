@@ -61,3 +61,7 @@ Each class extends FlaskForm which allows us to create simple fields the User ca
 ### class MessageForm(FlaskForm):
 
 	Form which allows users to message each other
+
+### class PomodoroTimerForm(FlaskForm):
+	
+	Form which allows users to use a pomodoro timer
