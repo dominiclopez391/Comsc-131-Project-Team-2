@@ -302,7 +302,7 @@ def share_notes():
     form.note.choices = options
 
     if(form.validate_on_submit()):
-        userToSendTo = User.query.filter_by(username = form.user.data).first()
+        userToSendTo = User.query.filter(User.username == form.user.data, User.public == True).first()
         if(userToSendTo is not None):
             userToSendTo.notes.append(Note.query.filter_by(id=form.note.data).first())
             db.session.commit()
