@@ -146,3 +146,45 @@ def join_classroom(classroom_id):
         Returns: 
             redirect to classroom
     '''
+
+def create_note():
+
+	'''
+	Webpage which allows users to create their own notes.
+	
+	Returns:
+		redirect to notes
+		render_template: webpage for creating a note
+	'''
+
+def view_notes():
+	
+	'''
+	Webpage allows for user to view their created notes
+
+	Returns:
+		render_template: Webpage for viewing notes
+	'''
+
+def share_notes():
+	'''
+	Webpage allows users to share their notes with other people, by selecting their note from a dropdown menu and entering other person's username.
+
+def questions(classroom_id):
+	
+	'''
+	Webpage allows user to post questions to classroom
+
+	Returns:
+		render_template: Webpage for posting questions to classroom
+	'''
+
+def answers(question_id):
+	
+	'''
+	Webpage allows for user to answer question in classroom
+	
+	Returns:
+		redirect to certain classroom's faq page
+		render_template: Webpage for answering questions in classroom
+	'''
