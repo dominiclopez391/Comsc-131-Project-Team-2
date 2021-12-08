@@ -7,7 +7,7 @@ import requests
 from myapp.forms import NotesForm, RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm, SearchClassroomsForm, CreateClassroomForm, MessageForm, QuestionForm, AnswerForm, PomodoroTimerForm
 from myapp.models import User, Classroom, Chat, Questions, Note
 
-from flask import render_template, flash, redirect
+from flask import render_template, flash, redirect, request
 from flask_login import login_user, logout_user, current_user
 
 from myapp import login
