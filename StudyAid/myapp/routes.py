@@ -1,9 +1,17 @@
 from myapp import myobj, db
+import pyttsx3
 
+<<<<<<< HEAD
 from myapp.forms import NotesForm, RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm, SearchClassroomsForm, CreateClassroomForm, MessageForm, QuestionForm, AnswerForm, ShareNotesForm
+=======
+from bs4 import BeautifulSoup
+import requests
+
+from myapp.forms import NotesForm, RegisterForm, LoginForm, OptionsForm, DeleteForm, SearchForm, SearchClassroomsForm, CreateClassroomForm, MessageForm, QuestionForm, AnswerForm, PomodoroTimerForm
+>>>>>>> VidhyutG-main
 from myapp.models import User, Classroom, Chat, Questions, Note
 
-from flask import render_template, flash, redirect
+from flask import render_template, flash, redirect, request
 from flask_login import login_user, logout_user, current_user
 
 import markdown
@@ -346,9 +354,30 @@ def answers(question_id):
 
 	return render_template('answers.html', form = form)
 
+@myobj.route('/PomodoroTimer', methods = ['GET', 'POST'])
+def pomodoro ():
+    form = PomodoroTimerForm()
+    title = 'Start Timer'
+    if request.method == 'POST':
+        try: 
+            study_time = (request.form ["study_time"])
+            #break_time = (request.form ["break_time"])
+            timer (int(study_time))
+            return redirect ("/timer")
+        except:
+            return flash ('Fail to load timer')
+    else: 
+        return render_template ("Ptimer.html", form = form,title=title)
 
-
-
-
+def timer (t):
+    # t = 25*60
+    while t:
+        mins, secs = divmod (t, 60)
+        timer = '{:02d}: {:02d}'.format (mins, secs)
+        print (timer, end = "\r")
+        time.sleep(1)
+        t -=1
+    pyttsx3.speak ("beep beep beep beep time to work")
+    return t
 
 

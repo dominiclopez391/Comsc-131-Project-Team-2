@@ -26,6 +26,8 @@
         </div>
         </div>
 	</nav>
+<br><h1> Welcome To StudyAid
+<img src="static/splashpage1.png">
 {% else %}
 <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
@@ -51,25 +53,13 @@
         </div>
         </div>
 	</nav>
-{% endif %}
-	{% if user.is_anonymous %}
-<br><h1> Welcome To StudyAid 
-	{% else %}
 	<h1>Welcome To StudyAid,{{user.username}}!</h1>
-
-	{% endif %}
-
-	
-
-{% if user.is_anonymous %}
-			
-<img src="static/splashpage1.png">
-{% else %}
-			
 <br><p><a href="/search" class="btn btn-secondary btn-lg btn-block active">Search</a></p>
 <p><a href="/classrooms" class="btn btn-secondary btn-lg btn-block active">Classrooms</a></p>
 <p><a href="/notes" class="btn btn-secondary btn-lg btn-block active">Notes</a></p>
+<p><a href="/PomodoroTimer" class="btn btn-secondary btn-lg btn-block active">Pomodoro Timer</a></p>
 {% endif %}
+
 
 
 {% endblock %}
