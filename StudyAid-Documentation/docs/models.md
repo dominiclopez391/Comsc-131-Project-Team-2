@@ -1,3 +1,17 @@
+### class Note(db.Model):
+	'''
+	Note database structure for storing notes in database
+	'''
+	
+	def __init__(self, title, body): 
+	
+	'''
+		Parameters:
+			title (string): Title of note
+			body (string): Body of note
+		timestamp (string): Current time
+	'''
+
 ### class Chat(db.Model):
 
 	'''
@@ -12,6 +26,34 @@
 			message (string): Message the user sent to the classroom chat
 	'''
 
+### class Questions(db.Model):
+
+	'''
+	Database structure used for storing questiosn in classroom in database
+	'''
+
+	def __init__(self, question):
+	
+	'''
+		Parameters:
+			question (string): Inputted question for classroom
+
+	def answerQuestion(self, answer):
+
+	'''
+		Parameters: 
+			answer (string): Inputted answer for question in classroom
+	'''
+
+	id: Creates id column in database
+
+	question: Creates question column in database
+
+	answer: Creates answer column in database
+
+	asker: Creates asker column in database
+
+	answerer: Creates answerer column in database
 
 ### class Classroom(db.Model):
 

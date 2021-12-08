@@ -1,6 +1,6 @@
 # Welcome to StudyAid
 ** For Comsc 131 - ** 
-** Dominic Lopez, Brandon Gong, Vidhyut Gopinath, Pranav, Arora **
+** Dominic Lopez, Brandon Gong, Vidhyut Gopinath, Pranav Arora **
 
 
 To run the application, you must navigate to the StudyAid directory and run the command: 'python3 run.py'
