@@ -31,7 +31,7 @@
 {% for note in notes %}
 	
 	<h3>{{note.title}}</h3>
-	<h4>{{note.body}}</h3>
+	{{note.body | safe}}
 	<div>
 
 {% endfor %}

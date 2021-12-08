@@ -6,6 +6,8 @@ from myapp.models import User, Classroom, Chat, Questions, Note
 from flask import render_template, flash, redirect
 from flask_login import login_user, logout_user, current_user
 
+import markdown
+
 from myapp import login
 
 
@@ -269,7 +271,7 @@ def create_note():
     '''
     form = NotesForm()
     if(form.validate_on_submit()):
-        newNote = Note(form.title.data, form.body.data)
+        newNote = Note(form.title.data, markdown.markdown(form.body.data))
         current_user.notes.append(newNote)
         db.session.commit()
         return redirect("/notes")
